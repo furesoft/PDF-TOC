@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "9EN5l3sILP4huitCVxmBIR7tCQ50r7g08iKz4Q8JnOosWJ5ICSjOYNwiizQs0cb3LpcTnGSl2uFgo0yEPCwLdw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\pdfsharpcore\\1.3.57\\pdfsharpcore.1.3.57.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\portable.xaml\\0.26.0\\portable.xaml.0.26.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
