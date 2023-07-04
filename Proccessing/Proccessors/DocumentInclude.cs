@@ -31,11 +31,6 @@ public class DocumentInclude : IPdfProccessor
     {
         var doc = PdfReader.Open(Filename, PdfDocumentOpenMode.Import);
 
-        if (Pages.Start == Pages.End)
-        {
-            document.Pages.Add(doc.Pages[Pages.Start]);
-        }
-        
         if (Pages.Start == 0 && Pages.End == 0)
         {
             foreach (var page in doc.Pages)
@@ -43,6 +38,11 @@ public class DocumentInclude : IPdfProccessor
                 document.Pages.Add(page);
             }
             return;
+        }
+        
+        if (Pages.Start == Pages.End)
+        {
+            document.Pages.Add(doc.Pages[Pages.Start]);
         }
         
         foreach (var pageIndex in Pages.GetIndices())

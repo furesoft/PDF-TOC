@@ -17,4 +17,10 @@ public class PdfProccessor
         
         document.Save((document.Info.Title ?? "output") + ".pdf");
     }
+
+    public T GetProccessor<T>()
+        where T : IPdfProccessor
+    {
+        return Proccessors.OfType<T>().FirstOrDefault();
+    }
 }
