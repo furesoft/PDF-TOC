@@ -13,12 +13,12 @@ public class ToCSlot : ISlot
         var data = input.Get(".data");
 
         var items = new List<TocItem>();
-        convertToItems(data.Children, items);
+        ConvertToItems(data.Children, items);
 
         input.Value = new ToCProcessor(items, header: header);
     }
 
-    private void convertToItems(IEnumerable<Node> nodeChildren, List<TocItem> items)
+    private static void ConvertToItems(IEnumerable<Node> nodeChildren, List<TocItem> items)
     {
         var children = new List<TocItem>();
         foreach (var child in nodeChildren)
@@ -27,7 +27,7 @@ public class ToCSlot : ISlot
             
             items.Add(new(child.Name, page));
             
-            convertToItems(child.Children, children);
+            ConvertToItems(child.Children, children);
         }
     }
 }
