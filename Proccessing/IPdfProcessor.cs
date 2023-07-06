@@ -2,7 +2,7 @@
 
 namespace PDF_TOC.Proccessing;
 
-public interface IPdfProccessor
+public interface IPdfProcessor
 {
     void Invoke(PdfDocument document, PdfProccessor processor);
 }

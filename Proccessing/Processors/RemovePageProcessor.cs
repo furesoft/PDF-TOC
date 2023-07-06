@@ -2,7 +2,7 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class RemovePageProccessor : IPdfProccessor
+public class RemovePageProcessor : IPdfProcessor
 {
     public int Page { get; set; }
     

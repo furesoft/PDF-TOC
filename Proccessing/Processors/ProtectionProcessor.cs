@@ -2,11 +2,11 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class ProtectionProccessor : IPdfProccessor
+public class ProtectionProcessor : IPdfProcessor
 {
     private readonly string userPw, ownerPw;
 
-    public ProtectionProccessor(string userPw, string ownerPw)
+    public ProtectionProcessor(string userPw, string ownerPw)
     {
         this.userPw = userPw;
         this.ownerPw = ownerPw;

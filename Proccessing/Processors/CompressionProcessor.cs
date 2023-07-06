@@ -2,7 +2,7 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class CompressionProccessor : IPdfProccessor
+public class CompressionProcessor : IPdfProcessor
 {
     public void Invoke(PdfDocument document, PdfProccessor processor)
     {

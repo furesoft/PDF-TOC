@@ -1,11 +1,25 @@
-﻿using PdfSharpCore.Pdf;
+﻿using magic.node;
+using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing;
 
 public class PdfProccessor
 {
-    public List<IPdfProccessor> Proccessors { get; set; } = new();
+    public List<IPdfProcessor> Proccessors { get; set; } = new();
 
+    public static PdfProccessor FromNode(Node node)
+    {
+        var processor = new PdfProccessor();
+        addPdfProccessors(node, processor.Proccessors);
+
+        return processor;
+    }
+
+    private static void addPdfProccessors(Node node, List<IPdfProcessor> processors)
+    {
+        
+    }
+    
     public void Invoke()
     {
         var document = new PdfDocument();
@@ -19,7 +33,7 @@ public class PdfProccessor
     }
 
     public T GetProccessor<T>()
-        where T : IPdfProccessor
+        where T : IPdfProcessor
     {
         return Proccessors.OfType<T>().FirstOrDefault();
     }

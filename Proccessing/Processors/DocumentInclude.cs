@@ -3,7 +3,7 @@ using PdfSharpCore.Pdf.IO;
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class DocumentInclude : IPdfProccessor
+public class DocumentInclude : IPdfProcessor
 {
     public DocumentInclude(string filename)
     {
@@ -11,7 +11,7 @@ public class DocumentInclude : IPdfProccessor
         Pages = PageRange.All();
     }
 
-    public DocumentInclude(string filename, PageRange range)
+    public DocumentInclude(string filename, PageRanges range)
     {
         Filename = filename;
         Pages = range;

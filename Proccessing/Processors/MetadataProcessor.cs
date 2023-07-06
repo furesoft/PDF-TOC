@@ -2,12 +2,12 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class MetadataProccessor : IPdfProccessor
+public class MetadataProcessor : IPdfProcessor
 {
     private string author;
     private string title;
 
-    public MetadataProccessor(string author, string title)
+    public MetadataProcessor(string author, string title)
     {
         this.author = author;
         this.title = title;

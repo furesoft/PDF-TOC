@@ -4,7 +4,7 @@ using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class PageNumberRenderer : IPdfProccessor
+public class PageNumberRenderer : IPdfProcessor
 {
     private PdfPagePosition _position;
     private readonly string _format;
@@ -17,7 +17,7 @@ public class PageNumberRenderer : IPdfProccessor
 
     public void Invoke(PdfDocument document, PdfProccessor processor)
     {
-        var toCProccessor = processor.GetProccessor<ToCProccessor>();
+        var toCProccessor = processor.GetProccessor<ToCProcessor>();
         var tocPageCount = toCProccessor.PageCount;
         
         for (var index = 1+tocPageCount; index < document.Pages.Count; index++)

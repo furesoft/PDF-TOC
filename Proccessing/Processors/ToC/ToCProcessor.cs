@@ -3,7 +3,7 @@ using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing.Processors.ToC;
 
-public class ToCProccessor : IPdfProccessor
+public class ToCProcessor : IPdfProcessor
 {
     public int PageCount { get; private set; }
     public string Header { get; set; }
@@ -28,7 +28,7 @@ public class ToCProccessor : IPdfProccessor
         return _graphicsCache[page];
     }
 
-    public ToCProccessor(List<TocItem> items, bool generateSeperatePage = true, string header = "Table of Contents")
+    public ToCProcessor(List<TocItem> items, bool generateSeperatePage = true, string header = "Table of Contents")
     {
         _items = items;
         _generateSeperatePage = generateSeperatePage;
