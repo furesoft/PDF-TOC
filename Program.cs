@@ -1,11 +1,13 @@
 ﻿using PDF_TOC.Proccessing;
+using PDF_TOC.Proccessing.Proccessors;
+using PDF_TOC.Proccessing.Proccessors.ToC;
 
 var processor = new PdfProccessor();
 
 processor.Proccessors.Add(new DocumentInclude("g.pdf"));
 processor.Proccessors.Add(new MetadataProccessor("Chris", "GK - Test"));
 
-var toc = new TocItems
+var toc = new List<TocItem>()
 {
     new("Demografischer Wandel", 1),
     new("Familie", 8),

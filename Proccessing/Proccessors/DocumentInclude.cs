@@ -1,7 +1,7 @@
 ﻿using PdfSharpCore.Pdf;
 using PdfSharpCore.Pdf.IO;
 
-namespace PDF_TOC.Proccessing;
+namespace PDF_TOC.Proccessing.Proccessors;
 
 public class DocumentInclude : IPdfProccessor
 {

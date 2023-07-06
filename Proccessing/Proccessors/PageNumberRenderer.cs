@@ -1,7 +1,8 @@
-﻿using PdfSharpCore.Drawing;
+﻿using PDF_TOC.Proccessing.Proccessors.ToC;
+using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
 
-namespace PDF_TOC.Proccessing;
+namespace PDF_TOC.Proccessing.Proccessors;
 
 public class PageNumberRenderer : IPdfProccessor
 {

@@ -1,6 +1,6 @@
 ﻿using PdfSharpCore.Pdf;
 
-namespace PDF_TOC.Proccessing;
+namespace PDF_TOC.Proccessing.Proccessors;
 
 public class RemovePageProccessor : IPdfProccessor
 {
