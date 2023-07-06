@@ -5,51 +5,55 @@ namespace PDF_TOC.Proccessing.Processors;
 
 public class DocumentInclude : IPdfProccessor
 {
-
-
     public DocumentInclude(string filename)
     {
         Filename = filename;
         Pages = PageRange.All();
     }
-    
+
     public DocumentInclude(string filename, PageRange range)
-        {
-            Filename = filename;
-            Pages = range;
-        }
-        
+    {
+        Filename = filename;
+        Pages = range;
+    }
+
     public DocumentInclude(string filename, string range)
     {
         Filename = filename;
-        Pages = PageRange.Parse(range);
+        Pages = PageRanges.Parse(range);
     }
 
     public string Filename { get; set; }
-    public PageRange Pages { get; set; }
+    public PageRanges Pages { get; set; }
+
     public void Invoke(PdfDocument document, PdfProccessor processor)
     {
         var doc = PdfReader.Open(Filename, PdfDocumentOpenMode.Import);
 
-        if (Pages.Start == 0 && Pages.End == 0)
+        foreach (var range in Pages)
         {
-            foreach (var page in doc.Pages)
+            if (range.Start == 0 && range.End == 0)
             {
-                document.Pages.Add(page);
-            }
-            return;
-        }
-        
-        if (Pages.Start == Pages.End)
-        {
-            document.Pages.Add(doc.Pages[Pages.Start]);
-        }
-        
-        foreach (var pageIndex in Pages.GetIndices())
-        {
-            var importedPage = doc.Pages[pageIndex];
+                foreach (var page in doc.Pages)
+                {
+                    document.Pages.Add(page);
+                }
 
-            document.Pages.Add(importedPage);
+                return;
+            }
+
+
+            if (range.Start == range.End)
+            {
+                document.Pages.Add(doc.Pages[range.Start]);
+            }
+
+            foreach (var pageIndex in range.GetIndices())
+            {
+                var importedPage = doc.Pages[pageIndex];
+
+                document.Pages.Add(importedPage);
+            }
         }
     }
 }

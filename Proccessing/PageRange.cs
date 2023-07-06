@@ -1,7 +1,20 @@
-﻿using System.ComponentModel;
-using System.Globalization;
+﻿namespace PDF_TOC.Proccessing;
 
-namespace PDF_TOC.Proccessing;
+public class PageRanges : List<PageRange>
+{
+    public static PageRanges Parse(string ranges)
+    {
+        var result = new PageRanges();
+        var spl = ranges.Split(",", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+        foreach (var range in spl)
+        {
+            result.Add(PageRange.Parse(range));
+        }
+        
+        return result;
+    }   
+}
 
 public class PageRange
 {
@@ -10,7 +23,7 @@ public class PageRange
 
     public static PageRange All()
     {
-        return new PageRange() { Start = 0, End = 0 };
+        return new() { Start = 0, End = 0 };
     }
 
     public IEnumerable<int> GetIndices()
@@ -18,22 +31,28 @@ public class PageRange
         return Enumerable.Range(Start, End - Start);
     }
 
-    public static PageRange Parse(string src)
+    internal static PageRange Parse(string src)
     {
         if (src == "*")
         {
-            return PageRange.All();
+            return All();
         }
 
-        if (src.Contains('-'))
+        if (!src.Contains('-'))
         {
-            var splitted = src.Split('-');
-            var start = splitted[0];
-            var end = splitted[1];
-
-            return new PageRange() { Start = int.Parse(start)-1, End = int.Parse(end)-1 };
+            return int.TryParse(src, out var pageIndex) ? new() {Start = pageIndex, End = pageIndex} : All();
         }
+        
+        var splitted = src.Split('-');
+        var start = splitted[0];
+        var end = splitted[1];
 
-        return int.TryParse(src, out var pageIndex) ? new(){ Start = pageIndex, End = pageIndex} : PageRange.All();
+        return new() { Start = int.Parse(start)-1, End = int.Parse(end)-1 };
+
+    }
+
+    public static implicit operator PageRanges(PageRange pr)
+    {
+        return new(){pr};
     }
 }
