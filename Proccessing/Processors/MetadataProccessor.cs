@@ -1,6 +1,6 @@
 ﻿using PdfSharpCore.Pdf;
 
-namespace PDF_TOC.Proccessing.Proccessors;
+namespace PDF_TOC.Proccessing.Processors;
 
 public class MetadataProccessor : IPdfProccessor
 {

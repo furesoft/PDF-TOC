@@ -1,11 +1,12 @@
 ﻿using PDF_TOC.Proccessing;
-using PDF_TOC.Proccessing.Proccessors;
-using PDF_TOC.Proccessing.Proccessors.ToC;
+using PDF_TOC.Proccessing.Processors;
+using PDF_TOC.Proccessing.Processors.ToC;
 
 var processor = new PdfProccessor();
 
 processor.Proccessors.Add(new DocumentInclude("g.pdf"));
 processor.Proccessors.Add(new MetadataProccessor("Chris", "GK - Test"));
+processor.Proccessors.Add(new CompressionProccessor());
 
 var toc = new List<TocItem>()
 {
