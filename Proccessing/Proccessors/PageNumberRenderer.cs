@@ -16,13 +16,14 @@ public class PageNumberRenderer : IPdfProccessor
 
     public void Invoke(PdfDocument document, PdfProccessor processor)
     {
-        var tocPageCount = processor.GetProccessor<ToCProccessor>().PageCount;
+        var toCProccessor = processor.GetProccessor<ToCProccessor>();
+        var tocPageCount = toCProccessor.PageCount;
         
         for (var index = 1+tocPageCount; index < document.Pages.Count; index++)
         {
             var page = document.Pages[index];
-
-            using var graphics = XGraphics.FromPdfPage(page);
+            
+            var graphics = XGraphics.FromPdfPage(page);
             var font = new XFont("Arial", 12);
             
             var pageNumber = index - tocPageCount;
@@ -34,6 +35,8 @@ public class PageNumberRenderer : IPdfProccessor
             graphics.DrawString(content, font,
                 XBrushes.Black,
                 CalculatePosition(page.Width, page.Height, contentSize));
+            
+            graphics.Dispose();
         }
     }
 

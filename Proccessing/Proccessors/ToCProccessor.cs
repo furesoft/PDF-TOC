@@ -14,10 +14,23 @@ public class ToCProccessor : IPdfProccessor
 
     private readonly TocItems _items;
     private readonly bool _generateSeperatePage;
-    public XFont ItemFont { get; set; } = new ("Arial", 12);
-    public XFont HeaderFont { get; set; } = new ("Arial", 36);
+    public XFont ItemFont { get; set; } = new("Arial", 12);
+    public XFont HeaderFont { get; set; } = new("Arial", 36);
     public int Margin { get; set; } = 12;
     public int HeaderMargin { get; set; } = 36;
+
+    private Dictionary<TocItem, (XPoint lastItemPos, XPoint pageNumberPos, PdfPage page)> _pageNumbers = new();
+    private Dictionary<PdfPage, XGraphics> _graphicsCache = new();
+
+    private XGraphics GetGraphics(PdfPage page)
+    {
+        if (!_graphicsCache.ContainsKey(page))
+        {
+            _graphicsCache.Add(page, XGraphics.FromPdfPage(page));
+        }
+
+        return _graphicsCache[page];
+    }
 
     public ToCProccessor(TocItems items, bool generateSeperatePage = true, string header = "Table of Contents")
     {
@@ -33,20 +46,33 @@ public class ToCProccessor : IPdfProccessor
 
     public void Invoke(PdfDocument document, PdfProccessor processor)
     {
-        GenerateTocPage(document);
-
-        var xml = ToC.Save(_items);
-        document.CustomValues["/toc"] = new(Encoding.Default.GetBytes(xml));
-        File.WriteAllText(document.Info.Title + ".toc.xml", xml);
+        GenerateTocPages(document);
 
         foreach (var item in _items)
         {
             var outline = document.Outlines.Add(item.Title, document.Pages[item.Page + PageCount]);
             AddOutlineChildren(item, outline, document);
         }
+
+        ClearAndDisposeCache();
     }
 
-    private void GenerateTocPage(PdfDocument document)
+    private void ClearAndDisposeCache()
+    {
+        foreach (var item in _graphicsCache)
+        {
+            item.Value.Dispose();
+        }
+        
+        _graphicsCache.Clear();
+    }
+
+    private void SetTocPageMetadata(PdfPage page)
+    {
+        page.Tag = "TOC";
+    }
+
+    private void GenerateTocPages(PdfDocument document)
     {
         if (!_generateSeperatePage)
         {
@@ -54,9 +80,10 @@ public class ToCProccessor : IPdfProccessor
         }
 
         var page = document.InsertPage(1);
-        using var graphics = XGraphics.FromPdfPage(page);
-        
-        XPoint lastItemPos = new(Margin,Margin);
+        SetTocPageMetadata(page);
+        var graphics = GetGraphics(page);
+
+        XPoint lastItemPos = new(Margin, Margin);
 
         DrawHeader(ref lastItemPos, graphics);
 
@@ -64,51 +91,76 @@ public class ToCProccessor : IPdfProccessor
         var leftSpace = page.Height.Value - HeaderMargin - headersize.Height;
 
         GenerateItems(graphics, leftSpace, lastItemPos, page);
+
+        CalculateActualPageCount(document);
+
+        RenderPageNumbers(document);
     }
 
-    private void GenerateItems(XGraphics graphics, double leftSpace, XPoint lastItemPos, PdfPage page, int startIndex = 0)
+    private void CalculateActualPageCount(PdfDocument document)
+    {
+        PageCount = document.Pages.Count<PdfPage>(_ => _.Tag == "TOC");
+    }
+
+    private void GenerateItems(XGraphics graphics, double leftSpace, XPoint lastItemPos, PdfPage page,
+        int startIndex = 0)
     {
         PageCount++;
-        
+
         for (var index = startIndex; index < _items.Count; index++)
         {
             var item = _items[index];
-            var actualPage = item.Page - PageCount;
             var contentSize = graphics.MeasureString(item.Title, ItemFont);
 
             leftSpace -= contentSize.Height;
-            
+
             if (leftSpace <= Margin * 8)
             {
                 if (index < _items.Count)
                 {
                     page = page.Owner.InsertPage(PageCount + 1);
-                    
-                    GenerateItems(XGraphics.FromPdfPage(page), page.Height, new(Margin, Margin), page, index);
+                    SetTocPageMetadata(page);
+
+                    var fromPdfPage = GetGraphics(page);
+                    GenerateItems(fromPdfPage, page.Height, new(Margin, Margin), page, index);
                 }
-                
+
                 break;
             }
-            
+
             var pos = new XPoint(Margin + contentSize.Width, Margin);
             lastItemPos = new(lastItemPos.X, lastItemPos.Y + pos.Y + 3);
             var pageNumberPos = GetPageNumberPos(item, graphics, lastItemPos.Y);
 
-            graphics.DrawString(item.Title, ItemFont, XBrushes.Black, lastItemPos);
-            graphics.DrawString(actualPage.ToString(), ItemFont, XBrushes.Black,
-                pageNumberPos);
+            _pageNumbers.TryAdd(item, (lastItemPos, pageNumberPos, page));
 
-            var rect = graphics.Transformer.WorldToDefaultPage(new(lastItemPos.X, lastItemPos.Y - pos.Y,
-                page.Width.Value - 12, 25));
-            page.AddDocumentLink(new(rect), actualPage + PageCount + 2);
+            graphics.DrawString(item.Title, ItemFont, XBrushes.Black, lastItemPos);
+        }
+    }
+
+    private void RenderPageNumbers(PdfDocument document)
+    {
+        foreach (var item in _items)
+        {
+            var pageNumber = _pageNumbers[item];
+            var graphics = GetGraphics(pageNumber.page);
+            graphics.DrawString(item.Page.ToString(), ItemFont, XBrushes.Black,
+                pageNumber.pageNumberPos);
+
+            var xRect = new XRect(pageNumber.lastItemPos.X,
+                pageNumber.lastItemPos.Y - Margin,
+                pageNumber.page.Width.Value - 12, 25);
+            var rect = graphics.Transformer.WorldToDefaultPage(xRect);
+
+            pageNumber.page.AddDocumentLink(new(rect), item.Page + PageCount + 1);
         }
     }
 
     private void DrawHeader(ref XPoint lastItemPos, XGraphics graphics)
     {
         var headersize = graphics.MeasureString(Header, HeaderFont);
-        
-        graphics.DrawString(Header, HeaderFont, XBrushes.Black, new XPoint(Margin,Margin + headersize.Height));
+
+        graphics.DrawString(Header, HeaderFont, XBrushes.Black, new XPoint(Margin, Margin + headersize.Height));
 
         lastItemPos = new(Margin, headersize.Height + HeaderMargin);
     }
@@ -117,7 +169,7 @@ public class ToCProccessor : IPdfProccessor
     {
         var actualPage = item.Page - PageCount - 1;
         var actualPageSize = graphics.MeasureString(actualPage.ToString(), ItemFont);
-        
+
         return new(graphics.PageSize.Width - actualPageSize.Width - Margin, y);
     }
 
