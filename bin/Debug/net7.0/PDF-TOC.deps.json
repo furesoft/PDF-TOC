@@ -8,11 +8,88 @@
     ".NETCoreApp,Version=v7.0": {
       "PDF-TOC/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "PdfSharpCore": "1.3.57",
-          "Portable.Xaml": "0.26.0"
+          "magic.lambda": "16.4.0",
+          "magic.node": "16.4.0",
+          "magic.node.extensions": "16.4.0",
+          "magic.signals.contracts": "16.4.0"
         },
         "runtime": {
           "PDF-TOC.dll": {}
+        }
+      },
+      "magic.lambda/16.4.0": {
+        "dependencies": {
+          "magic.node.extensions": "16.4.0",
+          "magic.signals": "16.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/magic.lambda.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "magic.node/16.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/magic.node.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "magic.node.extensions/16.4.0": {
+        "dependencies": {
+          "magic.node": "16.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/magic.node.extensions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "magic.signals/16.4.0": {
+        "dependencies": {
+          "magic.node.extensions": "16.4.0",
+          "magic.signals.contracts": "16.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/magic.signals.services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "magic.signals.contracts/16.4.0": {
+        "dependencies": {
+          "magic.node": "16.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/magic.signals.contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
       "PdfSharpCore/1.3.57": {
@@ -30,14 +107,6 @@
         "resources": {
           "lib/net6.0/de/PdfSharpCore.resources.dll": {
             "locale": "de"
-          }
-        }
-      },
-      "Portable.Xaml/0.26.0": {
-        "runtime": {
-          "lib/netstandard2.0/Portable.Xaml.dll": {
-            "assemblyVersion": "0.26.0.0",
-            "fileVersion": "0.26.7607.20022"
           }
         }
       },
@@ -73,19 +142,61 @@
       "serviceable": false,
       "sha512": ""
     },
+    "magic.lambda/16.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Nm5h/d+qLFrd98xapoM5NYHrIL4J9p7JAi6vfGVDf8v5qcdmM2TJcGjXBmXRAAt20anJ1z+aWXLnEdCoiQCuw==",
+      "path": "magic.lambda/16.4.0",
+      "hashPath": "magic.lambda.16.4.0.nupkg.sha512"
+    },
+    "magic.node/16.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IivWe73uBAetl+X8cdocuqwazaYRhwyQ3MZXvIZbMLgf3mtZNG9pgWE9g+zQk79QuvVatDcByDyYz7zK7pQjnQ==",
+      "path": "magic.node/16.4.0",
+      "hashPath": "magic.node.16.4.0.nupkg.sha512"
+    },
+    "magic.node.extensions/16.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xPHvanhVgc3oPgvj4mT4vSzI5KeIxa+ZFkzxsWTt0tSrCpaPrvLruzZbVDZBg9XAPFAm7oNlKcuJ2mnkscw3hw==",
+      "path": "magic.node.extensions/16.4.0",
+      "hashPath": "magic.node.extensions.16.4.0.nupkg.sha512"
+    },
+    "magic.signals/16.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aHTSTK+LHTMmyispSsRZYYSgohhw8YIx6H4a8BF0jbFPTGzyxrBxplfYtTjonN2ZyQUgHJIt1sgZ39M+cfPykQ==",
+      "path": "magic.signals/16.4.0",
+      "hashPath": "magic.signals.16.4.0.nupkg.sha512"
+    },
+    "magic.signals.contracts/16.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q+B2vhESXRLr/iExa8W8KG488ikge+/U6Jiy1K86kAetTQgXx+AM6t9DJZAQnsesI9NZhppxYjLf1+pKy3XHOA==",
+      "path": "magic.signals.contracts/16.4.0",
+      "hashPath": "magic.signals.contracts.16.4.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
+      "path": "microsoft.extensions.dependencyinjection/7.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+    },
     "PdfSharpCore/1.3.57": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/BQyPf5v2Yr7bkxneyamPgMrHk0hNQ+yhR6FTlCWTQNI7WSkSwOE1YZt8LUEfkruoFly9sZeMuz+d7srKP6bgw==",
       "path": "pdfsharpcore/1.3.57",
       "hashPath": "pdfsharpcore.1.3.57.nupkg.sha512"
-    },
-    "Portable.Xaml/0.26.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QQ3TwfgLTg5uAphAH8hIsnWXOicEhXVyR1Mk9jBzjqy+1YiigtpHIqhUzZeh02R/4OlXuXH+4i1FlGok5mzFkQ==",
-      "path": "portable.xaml/0.26.0",
-      "hashPath": "portable.xaml.0.26.0.nupkg.sha512"
     },
     "SharpZipLib/1.3.3": {
       "type": "package",

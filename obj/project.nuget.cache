@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "9EN5l3sILP4huitCVxmBIR7tCQ50r7g08iKz4Q8JnOosWJ5ICSjOYNwiizQs0cb3LpcTnGSl2uFgo0yEPCwLdw==",
+  "dgSpecHash": "vV8DyRZcmV6YVVGBmMm1tJ5WHVjSB+En0SrooFCMic9j0TYndjhaEQXlbSqzWeYPNZ5ZA0tLmFa0vnhoZqAfzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\magic.lambda\\16.4.0\\magic.lambda.16.4.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\magic.node\\16.4.0\\magic.node.16.4.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\magic.node.extensions\\16.4.0\\magic.node.extensions.16.4.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\magic.signals\\16.4.0\\magic.signals.16.4.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\magic.signals.contracts\\16.4.0\\magic.signals.contracts.16.4.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\pdfsharpcore\\1.3.57\\pdfsharpcore.1.3.57.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\portable.xaml\\0.26.0\\portable.xaml.0.26.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512"

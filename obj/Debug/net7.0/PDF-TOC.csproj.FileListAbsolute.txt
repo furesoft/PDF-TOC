@@ -19,4 +19,10 @@ C:\Users\chris\Documents\Projekte\PDF-TOC\obj\Debug\net7.0\refint\PDF-TOC.dll
 C:\Users\chris\Documents\Projekte\PDF-TOC\obj\Debug\net7.0\PDF-TOC.pdb
 C:\Users\chris\Documents\Projekte\PDF-TOC\obj\Debug\net7.0\PDF-TOC.genruntimeconfig.cache
 C:\Users\chris\Documents\Projekte\PDF-TOC\obj\Debug\net7.0\ref\PDF-TOC.dll
-C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\Portable.Xaml.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\magic.lambda.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\magic.node.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\magic.node.extensions.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\magic.signals.services.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\magic.signals.contracts.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\chris\Documents\Projekte\PDF-TOC\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
