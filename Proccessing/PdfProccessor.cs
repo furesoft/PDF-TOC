@@ -17,7 +17,15 @@ public class PdfProccessor
 
     private static void addPdfProccessors(Node node, List<IPdfProcessor> processors)
     {
-        
+        if (node.Value is IPdfProcessor processor)
+        {
+            processors.Add(processor);
+        }
+
+        foreach (var child in node.Children)
+        {
+            addPdfProccessors(child, processors);
+        }
     }
     
     public void Invoke()

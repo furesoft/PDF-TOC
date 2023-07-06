@@ -1,0 +1,33 @@
+﻿using magic.node;
+using magic.signals.contracts;
+using PDF_TOC.Proccessing.Processors.ToC;
+
+namespace PDF_TOC.Slots;
+
+[Slot(Name = "table-of-contents")]
+public class ToCSlot : ISlot
+{
+    public void Signal(ISignaler signaler, Node input)
+    {
+        var header = input.Value.ToString() ?? "Table of Contents";
+        var data = input.Get(".data");
+
+        var items = new List<TocItem>();
+        convertToItems(data.Children, items);
+
+        input.Value = new ToCProcessor(items, header: header);
+    }
+
+    private void convertToItems(IEnumerable<Node> nodeChildren, List<TocItem> items)
+    {
+        var children = new List<TocItem>();
+        foreach (var child in nodeChildren)
+        {
+            var page = int.Parse(child.Value.ToString());
+            
+            items.Add(new(child.Name, page));
+            
+            convertToItems(child.Children, children);
+        }
+    }
+}
