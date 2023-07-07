@@ -10,10 +10,9 @@ public class ToCSlot : ISlot
     public void Signal(ISignaler signaler, Node input)
     {
         var header = input.Value.ToString() ?? "Table of Contents";
-        var data = input.Get(".data");
 
         var items = new List<TocItem>();
-        ConvertToItems(data.Children, items);
+        ConvertToItems(input.Children, items);
 
         input.Value = new ToCProcessor(items, header: header);
     }
@@ -21,6 +20,7 @@ public class ToCSlot : ISlot
     private static void ConvertToItems(IEnumerable<Node> nodeChildren, List<TocItem> items)
     {
         var children = new List<TocItem>();
+        
         foreach (var child in nodeChildren)
         {
             var page = int.Parse(child.Value.ToString());

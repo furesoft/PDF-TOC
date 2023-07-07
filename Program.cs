@@ -8,10 +8,9 @@ metadata:
 compress
 page-numbers: X von Y
 table-of-contents: Inhaltsverzeichnis
-   .data
-      Demografischer Wandel: 1
-      Familie: 8
-      Konfliktlösung im Berufsleben: 16");
+   Demografischer Wandel: 1
+   Familie: 8
+   Konfliktlösung im Berufsleben: 16");
 
 var processor = PdfProccessor.FromNode(tree);
 
