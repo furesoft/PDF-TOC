@@ -1,4 +1,6 @@
-﻿namespace PDF_TOC.Proccessing;
+﻿using PdfSharpCore.Pdf;
+
+namespace PDF_TOC.Proccessing;
 
 public class PageRanges : List<PageRange>
 {
@@ -13,7 +15,19 @@ public class PageRanges : List<PageRange>
         }
         
         return result;
-    }   
+    }
+
+    public IEnumerable<PdfPage> GetPages(PdfDocument document)
+    {
+        foreach (var range in this)
+        {
+            var indices = range.GetIndices();
+            foreach (var index in indices)
+            {
+                yield return document.Pages[index];
+            }
+        }
+    }
 }
 
 public class PageRange
@@ -28,7 +42,7 @@ public class PageRange
 
     public IEnumerable<int> GetIndices()
     {
-        return Enumerable.Range(Start, End - Start);
+        return Enumerable.Range(Start, End - Start + 1).Select(_=> _ - 1);
     }
 
     internal static PageRange Parse(string src)
