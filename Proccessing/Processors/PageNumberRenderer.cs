@@ -8,6 +8,7 @@ public class PageNumberRenderer : IPdfProcessor
 {
     private PdfPagePosition _position;
     private readonly string _format;
+    public XFont Font { get; set; } = new ("Arial", 12);
 
     public PageNumberRenderer(PdfPagePosition position, string format)
     {
@@ -23,17 +24,16 @@ public class PageNumberRenderer : IPdfProcessor
         for (var index = 1+tocPageCount; index < document.Pages.Count; index++)
         {
             var page = document.Pages[index];
-            
+
             var graphics = XGraphics.FromPdfPage(page);
-            var font = new XFont("Arial", 12);
-            
+
             var pageNumber = index - tocPageCount;
             var documentPageCount = document.PageCount - 1 - tocPageCount;
             
             var content = _format.Replace("X", pageNumber.ToString()).Replace("Y", documentPageCount.ToString());
-            var contentSize = graphics.MeasureString(content, font);
+            var contentSize = graphics.MeasureString(content, Font);
 
-            graphics.DrawString(content, font,
+            graphics.DrawString(content, Font,
                 XBrushes.Black,
                 CalculatePosition(page.Width, page.Height, contentSize));
             
@@ -43,9 +43,9 @@ public class PageNumberRenderer : IPdfProcessor
 
     private XPoint CalculatePosition(XUnit pageWidth, XUnit pageHeight, XSize contentSize)
     {
-        int margin = 12;
-        double x = _position == PdfPagePosition.BottomRight ? pageWidth.Value - contentSize.Width : contentSize.Width;
-        double y = pageHeight.Value;
+        var margin = 12;
+        var x = _position == PdfPagePosition.BottomRight ? pageWidth.Value - contentSize.Width : contentSize.Width;
+        var y = pageHeight.Value;
 
         return new(_position == PdfPagePosition.BottomRight ? x - margin : margin, y - margin);
     }
