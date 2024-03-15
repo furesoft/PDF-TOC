@@ -3,7 +3,7 @@ using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing.Processors.ToC;
 
-public class ToCProcessor : IPdfProcessor
+public class ToCProcessor : PdfProcessor
 {
     public int PageCount { get; private set; }
     public string Header { get; set; }
@@ -35,7 +35,7 @@ public class ToCProcessor : IPdfProcessor
         Header = header;
     }
 
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         GenerateTocPages(document);
 

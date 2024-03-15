@@ -4,11 +4,10 @@ using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class PageNumberRenderer : IPdfProcessor
+public class PageNumberRenderer : PdfProcessor
 {
     private PdfPagePosition _position;
     private readonly string _format;
-    public XFont Font { get; set; } = new ("Arial", 12);
 
     public PageNumberRenderer(PdfPagePosition position, string format)
     {
@@ -16,8 +15,10 @@ public class PageNumberRenderer : IPdfProcessor
         _format = format;
     }
 
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
+        var font = Node.GetFontByChild();
+
         var toCProccessor = processor.GetProccessor<ToCProcessor>();
         var tocPageCount = toCProccessor.PageCount;
         
@@ -31,9 +32,9 @@ public class PageNumberRenderer : IPdfProcessor
             var documentPageCount = document.PageCount - 1 - tocPageCount;
             
             var content = _format.Replace("X", pageNumber.ToString()).Replace("Y", documentPageCount.ToString());
-            var contentSize = graphics.MeasureString(content, Font);
+            var contentSize = graphics.MeasureString(content, font);
 
-            graphics.DrawString(content, Font,
+            graphics.DrawString(content, font,
                 XBrushes.Black,
                 CalculatePosition(page.Width, page.Height, contentSize));
             

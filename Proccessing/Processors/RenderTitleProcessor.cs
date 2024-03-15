@@ -3,7 +3,7 @@ using PdfSharpCore.Pdf;
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class RenderTitleProcessor : IPdfProcessor
+public class RenderTitleProcessor : PdfProcessor
 {
     public XFont Font { get; set; } = new("Arial", 32);
     public PageRanges Pages { get; set; }
@@ -16,7 +16,7 @@ public class RenderTitleProcessor : IPdfProcessor
         Pages = pages;
         Position = position;
     }
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         var pages = Pages.GetPages(document);
 

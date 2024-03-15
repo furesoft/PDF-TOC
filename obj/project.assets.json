@@ -1,12 +1,12 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "magic.lambda/16.4.0": {
+    "net8.0": {
+      "magic.lambda/17.1.7": {
         "type": "package",
         "dependencies": {
-          "magic.node.extensions": "16.4.0",
-          "magic.signals": "16.4.0"
+          "magic.node.extensions": "17.1.7",
+          "magic.signals": "17.1.7"
         },
         "compile": {
           "lib/netstandard2.0/magic.lambda.dll": {
@@ -19,7 +19,7 @@
           }
         }
       },
-      "magic.node/16.4.0": {
+      "magic.node/17.2.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/magic.node.dll": {
@@ -32,10 +32,10 @@
           }
         }
       },
-      "magic.node.extensions/16.4.0": {
+      "magic.node.extensions/17.1.7": {
         "type": "package",
         "dependencies": {
-          "magic.node": "16.4.0"
+          "magic.node": "17.1.7"
         },
         "compile": {
           "lib/netstandard2.0/magic.node.extensions.dll": {
@@ -48,11 +48,11 @@
           }
         }
       },
-      "magic.signals/16.4.0": {
+      "magic.signals/17.1.7": {
         "type": "package",
         "dependencies": {
-          "magic.node.extensions": "16.4.0",
-          "magic.signals.contracts": "16.4.0"
+          "magic.node.extensions": "17.1.7",
+          "magic.signals.contracts": "17.1.7"
         },
         "compile": {
           "lib/netstandard2.0/magic.signals.services.dll": {}
@@ -61,10 +61,10 @@
           "lib/netstandard2.0/magic.signals.services.dll": {}
         }
       },
-      "magic.signals.contracts/16.4.0": {
+      "magic.signals.contracts/17.1.7": {
         "type": "package",
         "dependencies": {
-          "magic.node": "16.4.0"
+          "magic.node": "17.1.7"
         },
         "compile": {
           "lib/netstandard2.0/magic.signals.contracts.dll": {
@@ -77,18 +77,18 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection/7.0.0": {
+      "Microsoft.Extensions.DependencyInjection/8.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         },
@@ -96,15 +96,15 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -112,7 +112,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "PdfSharpCore/1.3.57": {
+      "PdfSharpCore/1.3.63": {
         "type": "package",
         "dependencies": {
           "SharpZipLib": "1.3.3",
@@ -173,10 +173,10 @@
     }
   },
   "libraries": {
-    "magic.lambda/16.4.0": {
-      "sha512": "0Nm5h/d+qLFrd98xapoM5NYHrIL4J9p7JAi6vfGVDf8v5qcdmM2TJcGjXBmXRAAt20anJ1z+aWXLnEdCoiQCuw==",
+    "magic.lambda/17.1.7": {
+      "sha512": "nZTH/rUZ2J+63ZOBQ8rdJZ4aXD+9eIE6/dXSk7Dtt7x4PgcbVrjWZ94huKazQdYV1Y8j5PXCESRA5nCHL8g7ig==",
       "type": "package",
-      "path": "magic.lambda/16.4.0",
+      "path": "magic.lambda/17.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -184,14 +184,14 @@
         "ico.png",
         "lib/netstandard2.0/magic.lambda.dll",
         "lib/netstandard2.0/magic.lambda.xml",
-        "magic.lambda.16.4.0.nupkg.sha512",
+        "magic.lambda.17.1.7.nupkg.sha512",
         "magic.lambda.nuspec"
       ]
     },
-    "magic.node/16.4.0": {
-      "sha512": "IivWe73uBAetl+X8cdocuqwazaYRhwyQ3MZXvIZbMLgf3mtZNG9pgWE9g+zQk79QuvVatDcByDyYz7zK7pQjnQ==",
+    "magic.node/17.2.0": {
+      "sha512": "PDElegc4VPPgXo6JJ+B+Vj25xnokB4LcXYfDU+IcK7m4g8B/FWstfk1837tg9KgIKof1UQkX0UiYq55cYku4aA==",
       "type": "package",
-      "path": "magic.node/16.4.0",
+      "path": "magic.node/17.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -199,14 +199,14 @@
         "ico.png",
         "lib/netstandard2.0/magic.node.dll",
         "lib/netstandard2.0/magic.node.xml",
-        "magic.node.16.4.0.nupkg.sha512",
+        "magic.node.17.2.0.nupkg.sha512",
         "magic.node.nuspec"
       ]
     },
-    "magic.node.extensions/16.4.0": {
-      "sha512": "xPHvanhVgc3oPgvj4mT4vSzI5KeIxa+ZFkzxsWTt0tSrCpaPrvLruzZbVDZBg9XAPFAm7oNlKcuJ2mnkscw3hw==",
+    "magic.node.extensions/17.1.7": {
+      "sha512": "9dXCNuEqPimdVGN1eoI69POI+bLkahUiWwuMlPdUjWt9MOPax+GIkjUkZmekTcqGbPANnRC7l7YnpbNkchm0mQ==",
       "type": "package",
-      "path": "magic.node.extensions/16.4.0",
+      "path": "magic.node.extensions/17.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -214,14 +214,14 @@
         "ico.png",
         "lib/netstandard2.0/magic.node.extensions.dll",
         "lib/netstandard2.0/magic.node.extensions.xml",
-        "magic.node.extensions.16.4.0.nupkg.sha512",
+        "magic.node.extensions.17.1.7.nupkg.sha512",
         "magic.node.extensions.nuspec"
       ]
     },
-    "magic.signals/16.4.0": {
-      "sha512": "aHTSTK+LHTMmyispSsRZYYSgohhw8YIx6H4a8BF0jbFPTGzyxrBxplfYtTjonN2ZyQUgHJIt1sgZ39M+cfPykQ==",
+    "magic.signals/17.1.7": {
+      "sha512": "fYkpSTdpdxTh+oWm0gaVzb9SHgrhXjpJXoQyAwM+XNyDHmdP5xmGSk/oifK0r9Vyl7/zNCBSDYd/4n/AToc3XQ==",
       "type": "package",
-      "path": "magic.signals/16.4.0",
+      "path": "magic.signals/17.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -229,14 +229,14 @@
         "ico.png",
         "lib/netstandard2.0/magic.signals.services.dll",
         "lib/netstandard2.0/magic.signals.xml",
-        "magic.signals.16.4.0.nupkg.sha512",
+        "magic.signals.17.1.7.nupkg.sha512",
         "magic.signals.nuspec"
       ]
     },
-    "magic.signals.contracts/16.4.0": {
-      "sha512": "Q+B2vhESXRLr/iExa8W8KG488ikge+/U6Jiy1K86kAetTQgXx+AM6t9DJZAQnsesI9NZhppxYjLf1+pKy3XHOA==",
+    "magic.signals.contracts/17.1.7": {
+      "sha512": "ptm9bemDX/IxMTKx94Y0w9Opo/Pbn9tk4p7xd/AnDqG7xFDuMR+hRt5nqTIv41DgHz+IkAdwtivwgQjdrdea5A==",
       "type": "package",
-      "path": "magic.signals.contracts/16.4.0",
+      "path": "magic.signals.contracts/17.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -244,19 +244,20 @@
         "ico.png",
         "lib/netstandard2.0/magic.signals.contracts.dll",
         "lib/netstandard2.0/magic.signals.contracts.xml",
-        "magic.signals.contracts.16.4.0.nupkg.sha512",
+        "magic.signals.contracts.17.1.7.nupkg.sha512",
         "magic.signals.contracts.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/7.0.0": {
-      "sha512": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
+    "Microsoft.Extensions.DependencyInjection/8.0.0": {
+      "sha512": "V8S3bsm50ig6JSyrbcJJ8bW2b9QLGouz+G1miK3UTaOWmMtFwNNNzUf4AleyDWUmTrWMLNnFSLEQtxmxgNQnNQ==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/7.0.0",
+      "path": "microsoft.extensions.dependencyinjection/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
         "buildTransitive/net462/_._",
@@ -268,24 +269,27 @@
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
-      "sha512": "h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+      "sha512": "cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
         "buildTransitive/net462/_._",
@@ -297,19 +301,21 @@
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "PdfSharpCore/1.3.57": {
-      "sha512": "/BQyPf5v2Yr7bkxneyamPgMrHk0hNQ+yhR6FTlCWTQNI7WSkSwOE1YZt8LUEfkruoFly9sZeMuz+d7srKP6bgw==",
+    "PdfSharpCore/1.3.63": {
+      "sha512": "F4k4JCz6PLR+tYL3YpzBwX0B59OarY4wCOb9UhKfmcellc7ZmUmtEszmM5by16Y3zcK6XHMzIKclL/o9h+IQRQ==",
       "type": "package",
-      "path": "pdfsharpcore/1.3.57",
+      "path": "pdfsharpcore/1.3.63",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -322,7 +328,7 @@
         "lib/netcoreapp3.1/de/PdfSharpCore.resources.dll",
         "lib/netstandard2.0/PdfSharpCore.dll",
         "lib/netstandard2.0/de/PdfSharpCore.resources.dll",
-        "pdfsharpcore.1.3.57.nupkg.sha512",
+        "pdfsharpcore.1.3.63.nupkg.sha512",
         "pdfsharpcore.nuspec"
       ]
     },
@@ -391,42 +397,39 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "Microsoft.Extensions.DependencyInjection >= 7.0.0",
-      "PdfSharpCore >= 1.3.57",
-      "magic.lambda >= 16.4.0",
-      "magic.node >= 16.4.0",
-      "magic.node.extensions >= 16.4.0",
-      "magic.signals.contracts >= 16.4.0"
+    "net8.0": [
+      "Microsoft.Extensions.DependencyInjection >= 8.0.0",
+      "PdfSharpCore >= 1.3.63",
+      "magic.lambda >= 17.1.7",
+      "magic.node >= 17.2.0",
+      "magic.node.extensions >= 17.1.7",
+      "magic.signals.contracts >= 17.1.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chris\\.nuget\\packages\\": {}
+    "/home/filmee24/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
+      "projectUniqueName": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
       "projectName": "PDF-TOC",
-      "projectPath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
-      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\obj\\",
+      "projectPath": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
+      "packagesPath": "/home/filmee24/.nuget/packages/",
+      "outputPath": "/home/filmee24/RiderProjects/PDF-TOC/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/filmee24/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/avalonia-ci/api/v2": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -437,32 +440,32 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
-            "version": "[7.0.0, )"
+            "version": "[8.0.0, )"
           },
           "PdfSharpCore": {
             "target": "Package",
-            "version": "[1.3.57, )"
+            "version": "[1.3.63, )"
           },
           "magic.lambda": {
             "target": "Package",
-            "version": "[16.4.0, )"
+            "version": "[17.1.7, )"
           },
           "magic.node": {
             "target": "Package",
-            "version": "[16.4.0, )"
+            "version": "[17.2.0, )"
           },
           "magic.node.extensions": {
             "target": "Package",
-            "version": "[16.4.0, )"
+            "version": "[17.1.7, )"
           },
           "magic.signals.contracts": {
             "target": "Package",
-            "version": "[16.4.0, )"
+            "version": "[17.1.7, )"
           }
         },
         "imports": [
@@ -481,7 +484,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/filmee24/Downloads/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

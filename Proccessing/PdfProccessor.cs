@@ -5,7 +5,7 @@ namespace PDF_TOC.Proccessing;
 
 public class PdfProccessor
 {
-    public List<IPdfProcessor> Proccessors { get; set; } = new();
+    public List<PdfProcessor> Proccessors { get; set; } = new();
 
     public static PdfProccessor FromNode(Node node)
     {
@@ -15,10 +15,11 @@ public class PdfProccessor
         return processor;
     }
 
-    private static void addPdfProccessors(Node node, List<IPdfProcessor> processors)
+    private static void addPdfProccessors(Node node, List<PdfProcessor> processors)
     {
-        if (node.Value is IPdfProcessor processor)
+        if (node.Value is PdfProcessor processor)
         {
+            processor.Node = node;
             processors.Add(processor);
         }
 
@@ -41,7 +42,7 @@ public class PdfProccessor
     }
 
     public T GetProccessor<T>()
-        where T : IPdfProcessor
+        where T : PdfProcessor
     {
         return Proccessors.OfType<T>().FirstOrDefault();
     }

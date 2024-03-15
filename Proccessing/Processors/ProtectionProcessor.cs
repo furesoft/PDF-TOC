@@ -2,7 +2,7 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class ProtectionProcessor : IPdfProcessor
+public class ProtectionProcessor : PdfProcessor
 {
     private readonly string userPw, ownerPw;
 
@@ -12,7 +12,7 @@ public class ProtectionProcessor : IPdfProcessor
         this.ownerPw = ownerPw;
     }
 
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         document.SecuritySettings.UserPassword = userPw;
         document.SecuritySettings.OwnerPassword = ownerPw;

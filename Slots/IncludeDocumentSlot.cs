@@ -10,13 +10,15 @@ public class IncludeDocumentSlot : ISlot
 {
     public void Signal(ISignaler signaler, Node input)
     {
-        var rangeNode = input.Children.FirstOrDefault(_ => _.Name == "pages");
+        var rangeNode = input.Get("pages");
+        var includeToC = input.GetFlag("toc");
+
         if (rangeNode != null)
         {
             var range = PageRanges.Parse(rangeNode.Value.ToString());
-            input.Value = new DocumentInclude(input.Value.ToString(), range);
+            input.Value = new DocumentInclude(input.Value.ToString(), range, includeToC);
         }
 
-        input.Value = new DocumentInclude(input.Value.ToString());
+        input.Value = new DocumentInclude(input.Value.ToString(), includeToC);
     }
 }

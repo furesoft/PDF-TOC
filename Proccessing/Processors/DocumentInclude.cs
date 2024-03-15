@@ -3,30 +3,36 @@ using PdfSharpCore.Pdf.IO;
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class DocumentInclude : IPdfProcessor
+public class DocumentInclude : PdfProcessor
 {
-    public DocumentInclude(string filename)
+    public DocumentInclude(string filename, bool toc)
     {
         Filename = filename;
         Pages = PageRange.All();
+        IncludeToC = toc;
     }
 
-    public DocumentInclude(string filename, PageRanges range)
+    public DocumentInclude(string filename, PageRanges range, bool toc)
     {
         Filename = filename;
         Pages = range;
+        IncludeToC = toc;
     }
 
-    public DocumentInclude(string filename, string range)
+    public DocumentInclude(string filename, string range, bool toc)
     {
         Filename = filename;
         Pages = PageRanges.Parse(range);
+        IncludeToC = toc;
     }
 
     public string Filename { get; set; }
+
     public PageRanges Pages { get; set; }
 
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public bool IncludeToC { get; set; }
+
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         var doc = PdfReader.Open(Filename, PdfDocumentOpenMode.Import);
 
@@ -42,6 +48,7 @@ public class DocumentInclude : IPdfProcessor
                 return;
             }
 
+            //todo: include page to toc if flag is true
 
             if (range.Start == range.End)
             {

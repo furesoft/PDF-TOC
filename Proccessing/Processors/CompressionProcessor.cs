@@ -2,9 +2,9 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class CompressionProcessor : IPdfProcessor
+public class CompressionProcessor : PdfProcessor
 {
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         document.Options.FlateEncodeMode = PdfFlateEncodeMode.BestCompression;
         document.Options.UseFlateDecoderForJpegImages = PdfUseFlateDecoderForJpegImages.Automatic;

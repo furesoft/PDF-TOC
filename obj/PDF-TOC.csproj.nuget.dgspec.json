@@ -1,33 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj": {}
+    "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj": {
+    "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
+        "projectUniqueName": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
         "projectName": "PDF-TOC",
-        "projectPath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\obj\\",
+        "projectPath": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
+        "packagesPath": "/home/filmee24/.nuget/packages/",
+        "outputPath": "/home/filmee24/RiderProjects/PDF-TOC/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/filmee24/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/avalonia-ci/api/v2": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -38,32 +35,32 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
             },
             "PdfSharpCore": {
               "target": "Package",
-              "version": "[1.3.57, )"
+              "version": "[1.3.63, )"
             },
             "magic.lambda": {
               "target": "Package",
-              "version": "[16.4.0, )"
+              "version": "[17.1.7, )"
             },
             "magic.node": {
               "target": "Package",
-              "version": "[16.4.0, )"
+              "version": "[17.2.0, )"
             },
             "magic.node.extensions": {
               "target": "Package",
-              "version": "[16.4.0, )"
+              "version": "[17.1.7, )"
             },
             "magic.signals.contracts": {
               "target": "Package",
-              "version": "[16.4.0, )"
+              "version": "[17.1.7, )"
             }
           },
           "imports": [
@@ -82,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/filmee24/Downloads/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

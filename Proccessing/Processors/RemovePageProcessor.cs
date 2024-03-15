@@ -2,11 +2,11 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class RemovePageProcessor : IPdfProcessor
+public class RemovePageProcessor : PdfProcessor
 {
     public int Page { get; set; }
     
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         document.Pages.RemoveAt(Page);
     }

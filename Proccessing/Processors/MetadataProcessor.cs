@@ -2,7 +2,7 @@
 
 namespace PDF_TOC.Proccessing.Processors;
 
-public class MetadataProcessor : IPdfProcessor
+public class MetadataProcessor : PdfProcessor
 {
     private string author;
     private string title;
@@ -13,7 +13,7 @@ public class MetadataProcessor : IPdfProcessor
         this.title = title;
     }
 
-    public void Invoke(PdfDocument document, PdfProccessor processor)
+    public override void Invoke(PdfDocument document, PdfProccessor processor)
     {
         document.Info.Author = author;
         document.Info.Title = title;

@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "vV8DyRZcmV6YVVGBmMm1tJ5WHVjSB+En0SrooFCMic9j0TYndjhaEQXlbSqzWeYPNZ5ZA0tLmFa0vnhoZqAfzw==",
+  "dgSpecHash": "+Ny6EThF+Ivrc437CCXTYYuNfhlI6PlSah3pkiKxu4YoO8oiImrJ3CYX/CT7fex1G7s7LalcyX/JZ2HjU1I31w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chris\\Documents\\Projekte\\PDF-TOC\\PDF-TOC.csproj",
+  "projectFilePath": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chris\\.nuget\\packages\\magic.lambda\\16.4.0\\magic.lambda.16.4.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\magic.node\\16.4.0\\magic.node.16.4.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\magic.node.extensions\\16.4.0\\magic.node.extensions.16.4.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\magic.signals\\16.4.0\\magic.signals.16.4.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\magic.signals.contracts\\16.4.0\\magic.signals.contracts.16.4.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\pdfsharpcore\\1.3.57\\pdfsharpcore.1.3.57.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512"
+    "/home/filmee24/.nuget/packages/magic.lambda/17.1.7/magic.lambda.17.1.7.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/magic.node/17.2.0/magic.node.17.2.0.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/magic.node.extensions/17.1.7/magic.node.extensions.17.1.7.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/magic.signals/17.1.7/magic.signals.17.1.7.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/magic.signals.contracts/17.1.7/magic.signals.contracts.17.1.7.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/pdfsharpcore/1.3.63/pdfsharpcore.1.3.63.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/sharpziplib/1.3.3/sharpziplib.1.3.3.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/sixlabors.fonts/1.0.0-beta17/sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "/home/filmee24/.nuget/packages/sixlabors.imagesharp/1.0.4/sixlabors.imagesharp.1.0.4.nupkg.sha512"
   ],
   "logs": []
 }

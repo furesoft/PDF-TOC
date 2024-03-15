@@ -2,19 +2,20 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>PDF_TOC</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     
     <ItemGroup>
-        <PackageReference Include="PdfSharpCore" Version="1.3.57" />
-        <PackageReference Include="magic.lambda" Version="16.4.0" />
-        <PackageReference Include="magic.node" Version="16.4.0" />
-        <PackageReference Include="magic.node.extensions" Version="16.4.0" />
-        <PackageReference Include="magic.signals.contracts" Version="16.4.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+        <PackageReference Include="PdfSharpCore" Version="1.3.63" />
+        <PackageReference Include="magic.lambda" Version="17.1.7" />
+        <PackageReference Include="magic.node" Version="17.2.0" />
+        <PackageReference Include="magic.node.extensions" Version="17.1.7" />
+        <PackageReference Include="magic.signals.contracts" Version="17.1.7" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     </ItemGroup>
 
 </Project>

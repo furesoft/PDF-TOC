@@ -28,6 +28,7 @@ public static class HyperlambdaEvaluator
         services.AddTransient<ISignalsProvider>((svc) => types);
 
         var provider = services.BuildServiceProvider();
+
         return provider;
     }
 
@@ -43,7 +44,6 @@ public static class HyperlambdaEvaluator
         {
             services.AddTransient(idx);
         }
-
 
         return result;
     }
