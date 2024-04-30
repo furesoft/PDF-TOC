@@ -22,6 +22,7 @@ public class PageRanges : List<PageRange>
         foreach (var range in this)
         {
             var indices = range.GetIndices();
+            
             foreach (var index in indices)
             {
                 yield return document.Pages[index];
@@ -40,6 +41,11 @@ public class PageRange
         return new() { Start = 0, End = 0 };
     }
 
+    public static PageRange Single(int pageIndex) 
+    {
+        return new() { Start = pageIndex, End = pageIndex };
+    }
+
     public IEnumerable<int> GetIndices()
     {
         return Enumerable.Range(Start, End - Start + 1).Select(_=> _ - 1);
@@ -54,19 +60,18 @@ public class PageRange
 
         if (!src.Contains('-'))
         {
-            return int.TryParse(src, out var pageIndex) ? new() {Start = pageIndex, End = pageIndex} : All();
+            return int.TryParse(src, out var pageIndex) ? Single(pageIndex) : All();
         }
         
         var splitted = src.Split('-');
         var start = splitted[0];
         var end = splitted[1];
 
-        return new() { Start = int.Parse(start)-1, End = int.Parse(end)-1 };
-
+        return new() { Start = int.Parse(start)-1, End = int.Parse(end) - 1 };
     }
 
     public static implicit operator PageRanges(PageRange pr)
     {
-        return new(){pr};
+        return [pr];
     }
 }

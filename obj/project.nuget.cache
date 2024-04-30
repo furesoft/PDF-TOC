@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Ny6EThF+Ivrc437CCXTYYuNfhlI6PlSah3pkiKxu4YoO8oiImrJ3CYX/CT7fex1G7s7LalcyX/JZ2HjU1I31w==",
+  "dgSpecHash": "7p0Og2BoUjW694MMxL2+6SGLphUNDYeSB3eHAgaoZOgNxCbd+mJRcfgXklLmLf0r9YAu5nwwOYmpl7dqdOedXg==",
   "success": true,
-  "projectFilePath": "/home/filmee24/RiderProjects/PDF-TOC/PDF-TOC.csproj",
+  "projectFilePath": "/home/filmee24/Projekte/Dotnet/PDF-TOC/PDF-TOC.csproj",
   "expectedPackageFiles": [
     "/home/filmee24/.nuget/packages/magic.lambda/17.1.7/magic.lambda.17.1.7.nupkg.sha512",
     "/home/filmee24/.nuget/packages/magic.node/17.2.0/magic.node.17.2.0.nupkg.sha512",

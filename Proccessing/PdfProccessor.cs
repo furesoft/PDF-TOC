@@ -5,7 +5,7 @@ namespace PDF_TOC.Proccessing;
 
 public class PdfProccessor
 {
-    public List<PdfProcessor> Proccessors { get; set; } = new();
+    public List<PdfProcessor> Proccessors { get; set; } = [];
 
     public static PdfProccessor FromNode(Node node)
     {

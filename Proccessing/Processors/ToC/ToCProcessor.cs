@@ -15,8 +15,8 @@ public class ToCProcessor : PdfProcessor
     public int Margin { get; set; } = 12;
     public int HeaderMargin { get; set; } = 36;
 
-    private readonly Dictionary<TocItem, (XPoint lastItemPos, XPoint pageNumberPos, PdfPage page)> _pageNumbers = new();
-    private readonly Dictionary<PdfPage, XGraphics> _graphicsCache = new();
+    private readonly Dictionary<TocItem, (XPoint lastItemPos, XPoint pageNumberPos, PdfPage page)> _pageNumbers = [];
+    private readonly Dictionary<PdfPage, XGraphics> _graphicsCache = [];
 
     private XGraphics GetGraphics(PdfPage page)
     {

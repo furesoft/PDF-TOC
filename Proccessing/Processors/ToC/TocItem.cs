@@ -5,7 +5,7 @@ public class TocItem
     public string Title { get; set; }
     public int Page { get; set; }
 
-    public List<TocItem> Children { get; set; } = new();
+    public List<TocItem> Children { get; set; } = [];
 
     public TocItem(string title, int page)
     {
