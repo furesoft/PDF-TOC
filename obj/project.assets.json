@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Furesoft.PrattParser/1.0.57": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Furesoft.PrattParser.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Furesoft.PrattParser.dll": {}
+        }
+      },
       "magic.lambda/17.1.7": {
         "type": "package",
         "dependencies": {
@@ -173,6 +182,19 @@
     }
   },
   "libraries": {
+    "Furesoft.PrattParser/1.0.57": {
+      "sha512": "iRR1FVe7Z/4QVcPT9D4x32JLZ6eHfOQ+TmWKJeSpkVSXe/VhrljNTQrWUMH9MmOdtSg01SDMesB+JQ/gUbL63w==",
+      "type": "package",
+      "path": "furesoft.prattparser/1.0.57",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "furesoft.prattparser.1.0.57.nupkg.sha512",
+        "furesoft.prattparser.nuspec",
+        "lib/net8.0/Furesoft.PrattParser.dll",
+        "lib/netstandard2.1/Furesoft.PrattParser.dll"
+      ]
+    },
     "magic.lambda/17.1.7": {
       "sha512": "nZTH/rUZ2J+63ZOBQ8rdJZ4aXD+9eIE6/dXSk7Dtt7x4PgcbVrjWZ94huKazQdYV1Y8j5PXCESRA5nCHL8g7ig==",
       "type": "package",
@@ -400,6 +422,7 @@
     "net8.0": [
       "Microsoft.Extensions.DependencyInjection >= 8.0.0",
       "PdfSharpCore >= 1.3.63",
+      "furesoft.prattparser >= 1.0.57",
       "magic.lambda >= 17.1.7",
       "magic.node >= 17.2.0",
       "magic.node.extensions >= 17.1.7",
@@ -407,19 +430,19 @@
     ]
   },
   "packageFolders": {
-    "/home/filmee24/.nuget/packages/": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/filmee24/Projekte/Dotnet/PDF-TOC/PDF-TOC.csproj",
+      "projectUniqueName": "/workspaces/PDF-TOC/PDF-TOC.csproj",
       "projectName": "PDF-TOC",
-      "projectPath": "/home/filmee24/Projekte/Dotnet/PDF-TOC/PDF-TOC.csproj",
-      "packagesPath": "/home/filmee24/.nuget/packages/",
-      "outputPath": "/home/filmee24/Projekte/Dotnet/PDF-TOC/obj/",
+      "projectPath": "/workspaces/PDF-TOC/PDF-TOC.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/PDF-TOC/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/filmee24/.nuget/NuGet/NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -456,6 +479,10 @@
             "target": "Package",
             "version": "[1.3.63, )"
           },
+          "furesoft.prattparser": {
+            "target": "Package",
+            "version": "[1.0.57, )"
+          },
           "magic.lambda": {
             "target": "Package",
             "version": "[17.1.7, )"
@@ -489,7 +516,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/filmee24/.dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
